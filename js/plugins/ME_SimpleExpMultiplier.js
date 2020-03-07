@@ -18,7 +18,8 @@
  * Plugin commands
  *  ME_SEM add x y
  *  ME_SEM set x y
- * 
+ * x is the id in the database, y the ammount
+ * If you set x to 0, it's everyone in the party. If it's -1, it's everyone in the database.
  * You can use variables instead raw numbers too, just type any letter plus the variable, like "v5", and you will use var number 5 instead a number!
  * 
  * @Terms of use
@@ -122,16 +123,13 @@ Game_Actor.prototype.ME_setExpRate = function(rate,config)
 
 Game_Player.prototype.ME_setExpRate = function(target, rate, config)
 {
-    console.log("ExpRate Player")
     if (isNaN(rate))
-
         rate=$gameVariables.value(parseInt(rate.substring(1)));
     
     if (isNaN(target))
         target=$gameVariables.value(parseInt(target.substring(1)));
-    console.log(target+" "+rate)
     
-    switch(parseInt(target))
+    switch(target)
     {
         case -1:
             for (var i=1;i<$gameActors._data.length;i++)
@@ -146,7 +144,7 @@ Game_Player.prototype.ME_setExpRate = function(target, rate, config)
             }
             break;
         default:
-            $gameActors.actor(parseInt(target)).ME_setExpRate(rate,config);
+            $gameActors.actor(target).ME_setExpRate(rate,config);
     }
 }
 
