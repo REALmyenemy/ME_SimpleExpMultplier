@@ -16,7 +16,7 @@ The plugin was also meant to be in consideration of editor add experience comman
 Let's say Harold and Therese skipped class to find a monster. Marsha and Lucius stay in class because it didn't do anything yet.
 Harold and Therese get a exp book item, which gives the party 100 exp points. But Marsha and Lucius now understand more of the book, so they get 120 exp points each.
 
-This functionality can be disabled from parameters. In a short future upgrade I'll make a plugin command to modify it mid-game.
+This functionality can be disabled from parameters. In a short term future update I'll make a plugin command to modify it mid-game.
 
 On a side note, this plugin is quite dangerous to use with other plugins that manage exp, exp rate or traits, like YEP Special Parameters or or xparams. Use at your own risk!
 
